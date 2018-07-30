@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="flexbox">
+	<div class="ui container">
+		<form class="ui form" method="POST" action="/register">
+			<div class="two fields">
+				<div class="field">
+					<input type="text" name="firstName" placeholder="First Name">
+				</div>
+				<div class="field">
+					<input type="text" name="lastName" placeholder="Last Name">
+				</div>
+			</div>
+			<div class="field">
+				<input type="text" name="username" placeholder="Username">
+			</div>
+			<div class="field">
+				<input type="password" name="password" placeholder="Password">
+			</div>
+			<button class="ui fluid inverted button orange" type="submit">Register</button>
+		</form>
+		<p class="subtitle">Already have an account? <a href="/register">Log In Here.</a></p>
+	</div>
+</div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,25 @@
+{
+  "name": "budgetor-tool",
+  "version": "1.0.0",
+  "description": "A little project where I can track my expenditure",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Noah Searle",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "heroku": "^7.7.8",
+    "mongoose": "^5.2.5",
+    "npm-git-install": "^0.3.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "semantic-ui": "^2.3.3"
+  }
+}
