@@ -8,9 +8,10 @@ var session = require("express-session");
 var User = require("./models/user");
 var flash = require("connect-flash");
 var port = process.env.PORT || 28017;
+var url = "mongodb://nsearle97:V1nyl1997@ds161411.mlab.com:61411/budgetor";
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/mytestapp");
+mongoose.connect(url);
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
