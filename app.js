@@ -8,6 +8,7 @@ var session = require("express-session");
 var User = require("./models/user");
 var flash = require("connect-flash");
 var port = process.env.PORT || 28017;
+var ip = process.env.IP || "127.0.0.1";
 var url = "mongodb://heroku_1p8hlz07:issf6foq9elr0fs66krnt9nadq@ds159661.mlab.com:59661/heroku_1p8hlz07";
 
 // mongoose.Promise = global.Promise;
@@ -85,6 +86,6 @@ app.get("/logout", function(req, res){
 // 	}	
 // })
 
-app.listen(port, process.env.IP || "127.0.0.1", function(){
+app.listen(port, ip, function(){
 	console.log("Server has started on port " + port + "!")
 })
