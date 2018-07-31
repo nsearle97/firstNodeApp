@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	background-color: #333;
+}
+
+.flexbox {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	margin: 0 auto;
+	width: 400px;
+}
+
+.ui.form input[type=text], .ui.form input[type=text]:focus, .ui.form input[type=password], .ui.form input[type=password]:focus {
+	color: white;
+}
+
+p.subtitle {
+	color: lightgrey;
+	margin-top:10px;
+}
+
+p.subtitle a {
+	color: lightblue;
+}
+
+p.subtitle a:hover {
+	text-decoration: underline;
+}
+
+div.inverted.segment, div.ui.inverted.orange.menu, div.ui.inverted.orange.menu .active.item{
+	background-color: transparent!important;
+}
+
+div.ui.secondary.inverted.pointing.menu {
+	border: none;
+}
