@@ -10,8 +10,8 @@ var flash = require("connect-flash");
 var port = process.env.PORT || 28017;
 var url = "mongodb://heroku_1p8hlz07:issf6foq9elr0fs66krnt9nadq@ds159661.mlab.com:59661/heroku_1p8hlz07";
 
-mongoose.Promise = global.Promise;
-mongoose.connect(url);
+// mongoose.Promise = global.Promise;
+// mongoose.connect(url);
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
