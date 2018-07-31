@@ -86,7 +86,6 @@ app.get("/logout", function(req, res){
 // 	}	
 // })
 
-app.listen(port, ip, function(){
+app.listen(port, function(){
 	console.log("Server has started on port " + port + "!")
-	console.log("Server has started on IP address " + ip + "!")
 })
