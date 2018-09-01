@@ -6,7 +6,14 @@ var userSchema = new mongoose.Schema({
 	username: String, 
 	password: String,
 	firstName: String,
-	lastName: String
+	lastName: String,
+	expenses: [{
+		id: mognoose.Schema.Types.ObjectId,
+		date: {type: Date, default: Date.now},
+		category: String,
+		subcategory: String,
+		amount: Number
+	}]
 })
 
 userSchema.plugin(passportLocalMongoose);

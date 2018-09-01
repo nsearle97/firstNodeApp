@@ -24,12 +24,12 @@
             </tr>
         </thead>
         <tbody>
-            <% expense.forEach(function(){ %>
+            <% user.expenses.forEach(function(){ %>
             	<tr>
-					<td><% expense.date %></td>
-					<td><% expense.category %></td>
-					<td><% expense.subcategory %></td>
-					<td><% expense.amount %></td>
+					<td><% user.expenses.date %></td>
+					<td><% user.expenses.category %></td>
+					<td><% user.expenses.subcategory %></td>
+					<td><% user.expenses.amount %></td>
 				</tr>
             <% }) %>
         </tbody>
