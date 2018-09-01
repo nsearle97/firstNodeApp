@@ -1,6 +1,38 @@
 <% include ./partials/header %>
 <% include ./partials/menu %>
 
-	<h1>Hello <%= user.firstName %>!</h1>
+	<h1 class="ui grey inverted header">Hello <%= user.firstName %>!</h1>
+	<h2 class="ui grey inverted header">This is your Dashboard</h2>
+	
+	<br/>
+	<br/>
+	<br/>
+
+	<h2 class="ui grey inverted center aligned header">EXPENSES</h2>
+
+	<br/>
+	<br/>
+	<br/>
+
+	<table class="ui basic 4 column inverted striped table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Subcategory</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% expense.forEach(function(){ %>
+            	<tr>
+					<td><% expense.date %></td>
+					<td><% expense.category %></td>
+					<td><% expense.subcategory %></td>
+					<td><% expense.amount %></td>
+				</tr>
+            <% }) %>
+        </tbody>
+    </table>
 
 <% include ./partials/footer %>

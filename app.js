@@ -6,6 +6,7 @@ var LocalStrategy = require("passport-local").Strategy;
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var User = require("./models/user");
+var Expense = require("./models/expenses");
 var flash = require("connect-flash");
 var port = process.env.PORT || 28017;
 var ip = process.env.IP || "127.0.0.1";
@@ -35,10 +36,10 @@ passport.deserializeUser(User.deserializeUser());
 
 app.get("/", function(req, res){
 	if(req.isAuthenticated()){
-		res.render("home", {user: req.user});
+		res.render("home", {user: req.user}, {expense: Expense});
 	} else {
 		res.redirect("/login");
-	}	
+	}
 })
 
 app.get("/register", function(req, res){

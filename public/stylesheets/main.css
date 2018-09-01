@@ -8,7 +8,13 @@
 body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
-	background-color: #333;
+	background-color: #333;	
+	color: #dcddde;
+}
+
+.ui.header {
+	font-family: 'Segoe UI Light', sans-serif;
+	letter-spacing: 1.5px;
 }
 
 .flexbox {
