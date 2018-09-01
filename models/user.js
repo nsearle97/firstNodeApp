@@ -8,7 +8,7 @@ var userSchema = new mongoose.Schema({
 	firstName: String,
 	lastName: String,
 	expenses: [{
-		id: mognoose.Schema.Types.ObjectId,
+		id: mongoose.Schema.Types.ObjectId,
 		date: {type: Date, default: Date.now},
 		category: String,
 		subcategory: String,
