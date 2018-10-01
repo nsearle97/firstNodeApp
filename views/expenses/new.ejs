@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+<% include ../partials/menu %>
+
+<h2 class="ui grey inverted header center aligned">Add new expense</h2>
+
+<div class="flexbox">
+	<div class="ui container">
+		<form class="ui form" method="POST" action="/expenses">
+			<div class="field">
+				<input type="text" name="date" placeholder="Date">
+			</div>
+			<div class="field">
+				<input type="text" name="category" placeholder="Category">
+			</div>
+			<div class="field">
+				<input type="text" name="subcategory" placeholder="Subcategory">
+			</div>
+			<div class="field">
+				<input type="text" name="amount" placeholder="Amount (£)">
+			</div>
+			<button class="ui fluid inverted button orange" type="submit">Add</button>
+		</form>
+	</div>
+</div>
+
+<% include ../partials/footer %>

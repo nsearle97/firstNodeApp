@@ -2,18 +2,14 @@ var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 
 var expenseSchema = new mongoose.Schema({
-	_id: mongoose.Schema.Types.ObjectId,
-	date: { type: Date, default: Date.now },
+	date: String,
 	category: String,
 	subcategory: String,
-	amount: Number,
-	owner: {
-		id: {
-			type: mongoose.Schema.Types.ObjectId,
-         	ref: "User"
-         },
-		username: String
-	}
+	amount: String
+	// owner: {
+	// 	type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'User'
+	// }
 });
 
 expenseSchema.plugin(passportLocalMongoose);

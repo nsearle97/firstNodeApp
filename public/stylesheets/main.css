@@ -6,7 +6,7 @@
 }
 
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Segoe UI Light', sans-serif;
 	font-size: 16px;
 	background-color: #333;	
 	color: #dcddde;
@@ -48,4 +48,8 @@ div.inverted.segment, div.ui.inverted.orange.menu, div.ui.inverted.orange.menu .
 
 div.ui.secondary.inverted.pointing.menu {
 	border: none;
+}
+
+.ui.inverted.table th {
+	color: #F2711C!important;
 }

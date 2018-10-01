@@ -6,6 +6,7 @@ var LocalStrategy = require("passport-local").Strategy;
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var User = require("./models/user");
+var Expense = require("./models/expenses");
 var flash = require("connect-flash");
 var port = process.env.PORT || 28017;
 var ip = process.env.IP || "127.0.0.1";
@@ -17,7 +18,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(require("express-session")({
     secret: "Blah",
@@ -39,7 +40,7 @@ app.get("/", function(req, res){
 	} else {
 		res.redirect("/login");
 	}
-})
+});
 
 app.get("/register", function(req, res){
 	res.render("register");
@@ -54,10 +55,10 @@ app.post("/register", function(req, res) {
 		} 
 		passport.authenticate("local")(req, res, function(){
 			res.redirect("/");
-			console.log(newUser);
+			// console.log(newUser);
 		})
 	})
-})
+});
 
 app.get("/login", function(req, res){
 	res.render("login");
@@ -77,6 +78,26 @@ app.get("/logout", function(req, res){
 	res.redirect("/login");
 });
 
+app.get("/expenses/new/", function(req, res){
+	res.render('expenses/new');
+});
+
+app.post("/expenses", function(req, res){
+	var date = req.body.date;
+	var category = req.body.category;
+	var subcategory = req.body.subcategory;
+	var amount = req.body.amount;
+	var newExpense = {date: date, category: category, subcategory: subcategory, amount: amount};
+	User.findByIdAndUpdate(req.user._id, {$push: {expenses: newExpense}}, function(err, updatedUser){
+		if(err){
+			console.log(err);
+		} else {
+			req.user.expenses.push(newExpense);
+			res.redirect("/");
+		}
+	})
+});
+
 // app.get("/*", function(req, res){
 // 	if(req.isAuthenticated()){
 // 		res.send("Secret");
@@ -88,4 +109,4 @@ app.get("/logout", function(req, res){
 
 app.listen(port, function(){
 	console.log("Server has started on port " + port + "!")
-})
+});

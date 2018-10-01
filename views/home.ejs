@@ -17,22 +17,30 @@
 	<table class="ui basic 4 column inverted striped table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Category</th>
-                <th>Subcategory</th>
-                <th>Amount</th>
+                <th class="orange">Date</th>
+                <th class="orange">Category</th>
+                <th class="orange">Subcategory</th>
+                <th class="orange">Amount</th>
             </tr>
         </thead>
         <tbody>
-            <% user.expenses.forEach(function(){ %>
+            <% user.expenses.forEach(function(expense){ %>
             	<tr>
-					<td><% user.expenses.date %></td>
-					<td><% user.expenses.category %></td>
-					<td><% user.expenses.subcategory %></td>
-					<td><% user.expenses.amount %></td>
+					<td><%= expense.date %></td>
+					<td><%= expense.category %></td>
+					<td><%= expense.subcategory %></td>
+					<td><%= expense.amount %></td>
 				</tr>
             <% }) %>
         </tbody>
     </table>
+
+    <a href="/expenses/new">
+    	<div class="ui labeled right floated button" tabindex="0">
+		  	<div class="ui basic orange button">
+		    	<i class="plus icon"></i> Add item
+		  	</div>
+		</div>
+	</a>
 
 <% include ./partials/footer %>
